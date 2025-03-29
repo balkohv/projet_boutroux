@@ -1,3 +1,40 @@
 body {
-    background-color: skyblue;
+    background-color: lightgray;
+}
+
+.navbar{
+    border-radius: 9px 0px 0px 9px;
+}
+
+.navbar-nav{
+    display: flex;
+    flex-direction: column !important;
+    font-size: 30px;
+}
+
+.container-fluid{
+    display: flex;
+    flex-direction: column ;
+}
+
+.navbar-container {    
+    position: fixed;
+    z-index: 2;
+    right: 0;
+    width: 30px;
+    align-items: center;
+    float: right;
+    height: 100vh;
+    display: flex;
+    transition: width 0.3s ease; /* Add transition for smooth effect */
+}
+
+.navbar-container:hover {
+    width: 65px; /* Change width on hover */
+}
+
+/*---------------dashboard--------------------*/
+#map{
+    position: sticky;
+    height: 100vh !important;
 }

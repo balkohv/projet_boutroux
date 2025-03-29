@@ -1,0 +1,15 @@
+{
+  "devDependencies": {
+    "@popperjs/core": "^2.11.8",
+    "@symfony/stimulus-bundle": "^2.23.0",
+    "@symfony/webpack-encore": "^5.1.0",
+    "bootstrap": "^5.3.3",
+    "jquery": "^3.7.1",
+    "webpack-notifier": "^1.15.0"
+  },
+  "scripts": {
+    "dev": "encore dev",
+    "build": "encore production",
+    "watch": "encore dev --watch"
+  }
+}

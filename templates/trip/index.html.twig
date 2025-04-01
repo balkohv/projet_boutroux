@@ -1,20 +1,38 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello TripController!{% endblock %}
+{% block title %}Trip{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+<div class="row">
+ <div class="col-6 add trip">
+    <form method="post" action="{{ path('trip_add') }}">
+        <div class="mb-3">
+            <label for="tripName" class="form-label">Trip Name</label>
+            <input type="text" class="form-control" id="tripName" name="tripName" required>
+        </div>
+        <div class="mb-3">
+            <label for="tripDestination" class="form-label">Destination</label>
+            <input type="text" class="form-control" id="tripDestination" name="tripDestination" required>
+        </div>
+        <div class="mb-3">
+            <label for="tripDate" class="form-label">Date</label>
+            <input type="date" class="form-control" id="tripDate" name="tripDate" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Add Trip</button>
+    </form>
+ </div>
+ <div class="col-6 map">
+   <div id="map" style="height: 500px;"></div>
+   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+   <script>
+       var map = L.map('map').setView([48.8566, 2.3522], 5);
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code>C:/Users/tpellefigue/Documents/projets/projet_boutroux/projet_boutroux/src/Controller/TripController.php</code></li>
-        <li>Your template at <code>C:/Users/tpellefigue/Documents/projets/projet_boutroux/projet_boutroux/templates/trip/index.html.twig</code></li>
-    </ul>
+       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+           maxZoom: 19,
+           attribution: '© OpenStreetMap contributors'
+       }).addTo(map);
+   </script>
+ </div>
 </div>
 {% endblock %}

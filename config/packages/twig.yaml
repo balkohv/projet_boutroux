@@ -1,5 +1,7 @@
 twig:
-    file_name_pattern: '*.twig'
+    globals:
+        DOMAIN_NAME: "%DOMAIN_NAME%"
+    file_name_pattern: "*.twig"
 
 when@test:
     twig:

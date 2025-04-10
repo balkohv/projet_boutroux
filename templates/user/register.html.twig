@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Register</title>
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
+		{% block stylesheets %}
+			{{ encore_entry_link_tags('app') }}
+		{% endblock %}
+
+		{% block javascripts %}
+			{{ encore_entry_script_tags('app') }}
+			{% block importmap %}
+				{{ importmap('app') }}
+			{% endblock %}
+		{% endblock %}
+	</head>
+	<body>
+		<div class="container-fluid align-items-center justify-content-center h-100">
+			<div class="col-md-2 d-flex flex-column flex-shrink-0 p-3 bg-light form-container">
+				<h1>Register</h1>
+
+				{{ form_start(form) }}
+				{{ form_row(form.username) }}
+				{{ form_row(form.email) }}
+				{{ form_row(form.password) }}
+                <p>Already have an account? <a href="{{ path('app_login') }}">Login</a></p>
+				<button type="submit" id="register-submit" class="btn btn-primary">Register</button>
+				{{ form_end(form) }}
+
+			</div>
+		</div>
+	</body>
+</html>

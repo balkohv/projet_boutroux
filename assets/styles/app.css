@@ -14,7 +14,7 @@ body {
 
 .container-fluid{
     display: flex;
-    flex-direction: column ;
+    flex-direction: column ;;
 }
 
 .navbar-container {    
@@ -33,8 +33,41 @@ body {
     width: 65px; /* Change width on hover */
 }
 
+.h-100{
+    height: 100vh !important;
+}
+
+
 /*---------------dashboard--------------------*/
 #map{
     position: sticky;
     height: 100vh !important;
+}
+
+/*-----------------forms----------------------*/
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input:focus {
+    border-width: 1px;
+    border-color: #0a7c34;
+    outline: none;
+    transition: border-color 0.8s ease, border-width 0.3s ease;
+}
+
+.form-container{
+    border-radius: 4px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#register-submit{
+    margin-top: 2vh;
+    width: -webkit-fill-available;
 }
